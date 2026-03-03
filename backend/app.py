@@ -264,9 +264,10 @@ def scrape_news(query, limit=50):
         return {"error": f"News error: {str(e)}"}
 
 # ==================== API ENDPOINTS ====================
+# Health check
 @app.route('/api/health', methods=['GET'])
 def health_check():
-    return jsonify({"status": "healthy", "message": "API is running on Port 5001"})
+    return jsonify({"status": "healthy"})
 # Catch-all route to serve React
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
@@ -275,9 +276,6 @@ def serve(path):
         return send_from_directory(app.static_folder, path)
     return send_from_directory(app.static_folder, "index.html")
 
-@app.route('/', methods=['GET'])
-def home():
-    return "<h1>Backend is running! 🚀</h1><p>Use the React frontend to interact with the API.</p>"
 
 @app.route('/api/analyze', methods=['POST'])
 def analyze_multi_source():
@@ -491,5 +489,5 @@ def analyze_csv():
         return jsonify({"error": f"Server error: {str(e)}"}), 500
 
 if __name__ == "__main__":
-    print("🚀 Starting Flask API on http://localhost:5001")
+    print("🚀 Starting Flask API ")
     app.run(debug=True, port=5001)

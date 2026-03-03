@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Search, TrendingUp, Brain, Globe, Loader2, Check, AlertCircle, BarChart3 } from 'lucide-react';
-
-const API_URL = 'http://localhost:5001/api';
-
+const API_URL = "/api";
 export default function App() {
   const [activeTab, setActiveTab] = useState('multi');
   const [query, setQuery] = useState('');
