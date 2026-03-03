@@ -1,0 +1,16 @@
+review,sentiment,user,product
+This product is amazing! Love it!,Positive,user1,ProductA
+Terrible quality worst purchase ever,Negative,user2,ProductA
+It's okay nothing special,Neutral,user3,ProductB
+Best thing I've ever bought,Positive,user4,ProductB
+Complete waste of money,Negative,user5,ProductA
+Excellent product highly recommend,Positive,user6,ProductB
+Not worth the price,Negative,user7,ProductA
+Average quality for the cost,Neutral,user8,ProductB
+Super fast shipping great service,Positive,user9,ProductA
+Stopped working after one week,Negative,user10,ProductB
+Does what it says good value,Positive,user11,ProductA
+Poor customer support experience,Negative,user12,ProductB
+It works fine no complaints,Neutral,user13,ProductA
+Amazing quality exceeded expectations,Positive,user14,ProductB
+Very disappointed with this,Negative,user15,ProductA

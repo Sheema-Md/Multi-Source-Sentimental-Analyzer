@@ -1,0 +1,12 @@
+.env
+package-lock.json
+package.json
+postcss.config.js
+tailwind.config.js
+vite.config.js
+node_modules
+__pycache__
+data
+ml
+services
+utils
