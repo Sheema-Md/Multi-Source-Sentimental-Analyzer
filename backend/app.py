@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,send_from_directory
 from flask_cors import CORS
 import pandas as pd
 import nltk
@@ -29,7 +29,8 @@ nltk.download('punkt', quiet=True)
 nltk.download('vader_lexicon', quiet=True)
 nltk.download('punkt_tab', quiet=True)
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", static_url_path="/")
+
 CORS(app)  # Enable CORS for React frontend
 
 sia = SentimentIntensityAnalyzer()
@@ -266,6 +267,13 @@ def scrape_news(query, limit=50):
 @app.route('/api/health', methods=['GET'])
 def health_check():
     return jsonify({"status": "healthy", "message": "API is running on Port 5001"})
+# Catch-all route to serve React
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def serve(path):
+    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    return send_from_directory(app.static_folder, "index.html")
 
 @app.route('/', methods=['GET'])
 def home():
