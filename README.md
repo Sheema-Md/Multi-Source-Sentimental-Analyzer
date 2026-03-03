@@ -1,151 +1,107 @@
-# 🧠 Multi-Source Sentiment Analysis Platform
+# 🧠 Multi-Source Sentiment Analysis System
 
-AI-powered full-stack web application that analyzes sentiment from **Reddit, News, CSV files, and custom text** using multiple NLP and Machine Learning algorithms.
+A full-stack web application that performs sentiment analysis using a **hybrid NLP + Machine Learning approach**. The system combines multiple algorithms with a consensus-based ensemble method to improve reliability and accuracy.
 
-Built with **React + Flask + Scikit-Learn + NLTK**
+**Average Accuracy:** 83%
 
----
+## 🌐 Live Deployment
 
-## 📸 Screenshots
+The application is deployed on Render:
 
-### 🔎 Dashboard
-![Dashboard](images/dashboard.png)
-
----
-
-### 📊 Analysis Results
-![Results](images/results.png)
+🔗 **Live App:** https://multi-source-sentimental-analyzer.onrender.com
 
 ---
 
-### 📁 CSV Upload & Metrics
-![CSV Analysis](images/csv.png)
+### 🔍 Health Check
+
+You can verify the backend status at:
+
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-- 🔴 Reddit sentiment analysis  
-- 📰 News article sentiment analysis  
-- ✍️ Real-time custom text analysis  
-- 📊 CSV batch processing (up to 1000 rows)  
-- 🤖 Multi-algorithm ensemble prediction  
-- 📈 Accuracy, Precision, Recall, F1 Score  
-- 🤝 Algorithm agreement scoring  
+- Hybrid Rule-Based + ML sentiment analysis  
+- Six sentiment analysis algorithms  
+- Ensemble voting consensus  
+- Real-time News API integration  
+- CSV batch sentiment analysis  
+- Algorithm-wise comparison & confidence scores  
+- Positive/Negative keyword extraction  
+- Sentiment distribution visualization  
 
 ---
 
 ## 🤖 Algorithms Used
 
-- VADER (NLTK)
-- TextBlob
-- Logistic Regression
-- Naive Bayes
-- Random Forest
-- Voting Ensemble Classifier
+- VADER  
+- TextBlob  
+- Logistic Regression (TF-IDF)  
+- Naive Bayes  
+- Random Forest  
+- Ensemble Voting Classifier  
 
 ---
 
-## 🏗 Tech Stack
+## 🌐 External API Integration
 
-### Frontend
-- React
-- Tailwind CSS
-- Lucide React Icons
-
-### Backend
-- Flask
-- Scikit-learn
-- NLTK
-- TextBlob
-- Pandas
-- PRAW (Reddit API)
-- News API
-- Gunicorn (Production)
+**News API**
+- Fetches real-time articles based on search query  
+- Language: English  
+- Sort Order: PublishedAt  
+- Handles rate limiting (100 requests/day – free tier)  
+- Graceful error handling  
 
 ---
 
-## ⚙️ Local Setup
+## 🖥 Frontend (React)
 
-### 1️⃣ Backend Setup
+### 1️⃣ Multi-Source Analysis Tab
+- Source selection checkboxes  
+- Search bar with suggestions  
+- Comprehensive results dashboard  
+
+### 2️⃣ CSV Upload Tab
+- Drag & drop file upload  
+- Batch sentiment analysis  
+- Paginated results table  
+
+### 3️⃣ Quick Test Tab
+- Direct text input  
+- Algorithm breakdown cards  
+- Confidence score visualization  
+
+---
+
+## 🛠 Tech Stack
+
+**Backend:** Flask, Scikit-learn, NLTK, TextBlob, Pandas  
+**Frontend:** React  
+**Deployment:** Render (Single Service Architecture)
+
+---
+
+## 📡 API Endpoints
+
+| Endpoint | Method | Description |
+|-----------|--------|-------------|
+| `/api/analyze` | POST | Multi-source sentiment analysis |
+| `/api/analyze-text` | POST | Analyze single text |
+| `/api/analyze-csv` | POST | Batch CSV analysis |
+| `/api/health` | GET | API health check |
+
+---
+## ▶️ Running the Application
+
 
 ```bash
 cd backend
 pip install -r requirements.txt
 python app.py
-Backend runs at:
 
-http://localhost:5001
 
-### 2️⃣ Frontend Setup
+
 cd frontend
 npm install
 npm start
-
-
-Frontend runs at:
-
-http://localhost:3000
-
-### 🔑 Environment Variables
-
-Create a .env file inside the backend folder:
-
-NEWS_API_KEY=your_news_api_key
-REDDIT_CLIENT_ID=your_client_id
-REDDIT_CLIENT_SECRET=your_client_secret
-REDDIT_USER_AGENT=your_user_agent
-
-### 📡 API Endpoints
-Endpoint	Method	Description
-/api/analyze	POST	Multi-source sentiment analysis
-/api/analyze-text	POST	Analyze single text
-/api/analyze-csv	POST	Upload CSV for batch analysis
-/api/health	GET	API health check
-### 🌐 Deployment (Render)
-Backend (Web Service)
-
-Build Command:
-pip install -r requirements.txt
-
-Start Command:
-gunicorn app:app
-
-Frontend (Static Site)
-
-Build Command:
-npm install && npm run build
-
-Publish Directory:
-build
-
-Update frontend API URL to:
-
-const API_URL = "https://your-backend-name.onrender.com/api";
-
-#### 📂 Project Structure
-project-root/
-│
-├── backend/
-│   ├── app.py
-│   ├── requirements.txt
-│   └── .env
-│
-├── frontend/
-│   ├── src/
-│   ├── package.json
-│
-└── README.md
-
-### 📈 Future Improvements
-
-Sentiment trend visualization
-
-Database integration
-
-Model persistence
-
-User authentication
-
-Additional data sources
 
